@@ -1,0 +1,64 @@
+// Definición del algoritmo
+Algoritmo TablaDeEquipos
+	
+	// Definir constantes y variables
+	Definir NUM_EQUIPOS Como Entero;
+	NUM_EQUIPOS <- 10;
+	
+	// Declarar arreglos correctamente
+	Definir EQUIPOS Como Cadena;
+	Definir PARTIDOS, GANADOS, EMPATADOS, PERDIDOS, PUNTOS Como Entero;
+	Definir RESULTADOS Como Entero;
+	
+	// Dimensionar los arreglos
+	Dimensionar EQUIPOS[NUM_EQUIPOS];
+	Dimensionar PARTIDOS[NUM_EQUIPOS], GANADOS[NUM_EQUIPOS], EMPATADOS[NUM_EQUIPOS], PERDIDOS[NUM_EQUIPOS], PUNTOS[NUM_EQUIPOS];
+	Dimensionar RESULTADOS[NUM_EQUIPOS, NUM_EQUIPOS]; // Matriz para resultados
+	
+	// Inicializar los valores de los arreglos
+	Para i <- 1 Hasta NUM_EQUIPOS Hacer
+		EQUIPOS[i] <- "Equipo " + ConvertirATexto(i);
+		PARTIDOS[i] <- 0;
+		GANADOS[i] <- 0;
+		EMPATADOS[i] <- 0;
+		PERDIDOS[i] <- 0;
+		PUNTOS[i] <- 0;
+	FinPara
+	
+	// Pedir los resultados de los partidos
+	Para i <- 1 Hasta NUM_EQUIPOS - 1 Hacer
+		Para j <- i + 1 Hasta NUM_EQUIPOS Hacer
+			Escribir "Ingrese resultado de ", EQUIPOS[i], " vs ", EQUIPOS[j];
+			Escribir "1 = gana equipo 1, 2 = gana equipo 2, 3 = empate: ";
+			Leer RESULTADOS[i, j];
+			
+			// Evaluar el resultado del partido
+			Segun RESULTADOS[i, j] Hacer
+				1:
+					GANADOS[i] <- GANADOS[i] + 1;
+					PERDIDOS[j] <- PERDIDOS[j] + 1;
+					PUNTOS[i] <- PUNTOS[i] + 3;
+				2:
+					GANADOS[j] <- GANADOS[j] + 1;
+					PERDIDOS[i] <- PERDIDOS[i] + 1;
+					PUNTOS[j] <- PUNTOS[j] + 3;
+				3:
+					EMPATADOS[i] <- EMPATADOS[i] + 1;
+					EMPATADOS[j] <- EMPATADOS[j] + 1;
+					PUNTOS[i] <- PUNTOS[i] + 1;
+					PUNTOS[j] <- PUNTOS[j] + 1;
+			FinSegun
+			
+			// Registrar partidos jugados
+			PARTIDOS[i] <- PARTIDOS[i] + 1;
+			PARTIDOS[j] <- PARTIDOS[j] + 1;
+		FinPara
+	FinPara
+	
+	// Mostrar la tabla final de estadísticas
+	Escribir "Equipo | PJ | G | E | P | PTS";
+	Para i <- 1 Hasta NUM_EQUIPOS Hacer
+		Escribir EQUIPOS[i], " | ", PARTIDOS[i], " | ", GANADOS[i], " | ", EMPATADOS[i], " | ", PERDIDOS[i], " | ", PUNTOS[i];
+	FinPara
+	
+FinAlgoritmo
