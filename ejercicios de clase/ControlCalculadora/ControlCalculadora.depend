@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1742321880 source:c:\users\marlo\onedrive\documentos\2025\progra\miprimerbiblioteca\controlcalculadora\controlcalculadora\main.cpp
+	<iostream>
+	"calculadoras.h"
+
+1742321521 c:\users\marlo\onedrive\documentos\2025\progra\miprimerbiblioteca\controlcalculadora\controlcalculadora\include\calculadoras.h
+
+1742321521 source:c:\users\marlo\onedrive\documentos\2025\progra\miprimerbiblioteca\controlcalculadora\controlcalculadora\src\calculadoras.cpp
+	"calculadoras.h"
+	<stdexcept>
+
