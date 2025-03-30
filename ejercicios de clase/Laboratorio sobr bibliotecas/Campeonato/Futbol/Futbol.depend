@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1743293827 source:c:\users\marlo\onedrive\documentos\2025\progra\programacion1\ejercicios de clase\laboratorio sobr bibliotecas\campeonato\futbol\main.cpp
+	<iostream>
+	"Campeonato.h"
+
+1743293827 c:\users\marlo\onedrive\documentos\2025\progra\programacion1\ejercicios de clase\laboratorio sobr bibliotecas\campeonato\futbol\include\campeonato.h
+	<iostream>
+	<cstdlib>
+	<ctime>
+
+1743293827 source:c:\users\marlo\onedrive\documentos\2025\progra\programacion1\ejercicios de clase\laboratorio sobr bibliotecas\campeonato\futbol\src\campeonato.cpp
+	"Campeonato.h"
+
